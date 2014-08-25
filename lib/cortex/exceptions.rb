@@ -19,8 +19,8 @@ module Cortex
       end
     end
 
-    class ObjectConsumed < CortexAPIError
-      def initialize(message = 'Object is in use by another object and cannot be deleted', http_status = :unprocessable_entity)
+    class ResourceConsumed < CortexAPIError
+      def initialize(message = 'Resource is in use by another resource and cannot be deleted', http_status = :unprocessable_entity)
         super(message)
       end
     end

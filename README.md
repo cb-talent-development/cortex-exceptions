@@ -1,6 +1,8 @@
 # Cortex::Exceptions
 
-TODO: Write a gem description
+[![Dependency Status](https://gemnasium.com/cb-talent-development/cortex-exceptions.svg)](https://gemnasium.com/cb-talent-development/cortex-exceptions)
+
+`cortex-exceptions` provides a set of common exceptions used across the Cortex SOA infrastructure.
 
 ## Installation
 
@@ -18,12 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Simply reference the exception you wish to raise or rescue from in your application. Example:
 
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/cortex-exceptions/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+```ruby
+raise Cortex::Exceptions::ResourceConsumed
+```
