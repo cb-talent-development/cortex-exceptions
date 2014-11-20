@@ -24,5 +24,9 @@ module Cortex
         super(message)
       end
     end
+
+    class IdExpected < ArgumentError; end
+
+    class IdNotExpected < ArgumentError; end
   end
 end
