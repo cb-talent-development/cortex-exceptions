@@ -33,6 +33,7 @@ module Cortex
       attr_reader :base_url
       def initialize(base_url = "http://api.cbcortex.com/api/v1/")
         @base_url = base_url
+        super
       end
     end
   end
