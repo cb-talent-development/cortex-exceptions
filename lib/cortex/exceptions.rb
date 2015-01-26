@@ -25,7 +25,7 @@ module Cortex
       end
     end
 
-    class ConnectionFailed < APIError
+    class ConnectionFailed < ApiError
       attr_reader :base_url
       def initialize(base_url = "http://api.cbcortex.com/api/v1/", message = nil, http_status = 599)
         @base_url = base_url
