@@ -25,16 +25,16 @@ module Cortex
       end
     end
 
+    class ConnectionFailed < APIError
+      attr_reader :base_url
+      def initialize(base_url = "http://api.cbcortex.com/api/v1/", message = nil, http_status = 599)
+        @base_url = base_url
+        super(message: message, http_status: http_status)
+      end
+    end
+
     class IdExpected < ArgumentError; end
 
     class IdNotExpected < ArgumentError; end
-
-    class ConnectionFailed < CortexError
-      attr_reader :base_url
-      def initialize(base_url = "http://api.cbcortex.com/api/v1/")
-        @base_url = base_url
-        super
-      end
-    end
   end
 end
