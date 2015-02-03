@@ -15,21 +15,21 @@ module Cortex
 
     class NotEmptyError < ApiError
       def initialize(message = nil)
-        super(message, :conflict)
+        super(message: message, http_status: :conflict)
       end
     end
 
     class ResourceConsumed < ApiError
       def initialize(message = 'Resource is in use by another resource and cannot be deleted', http_status = :unprocessable_entity)
-        super(message)
+        super(message: message)
       end
     end
 
     class ConnectionFailed < ApiError
       attr_reader :base_url
       def initialize(base_url = "http://api.cbcortex.com/api/v1/", message = nil, http_status = 599)
-        @base_url = base_url
         super(message: message, http_status: http_status)
+        @base_url = base_url
       end
     end
 
